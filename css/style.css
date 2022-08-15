@@ -11,13 +11,14 @@ body {
 :root {
     --mainColor: #5e80db;
     --hoverColor: #4c76e1;
-
+--bckgrdColor:rgb(255, 255, 255);
 }
 
 .container {
     width: 1440px;
     height:1043px;
     margin: auto;
+    position: relative;
 }
 
 /* Start navbar setting */
@@ -25,7 +26,7 @@ nav {
     margin-top: 55px;
     width: 100%;
     height: 90px;
-    background-color: #fff;
+    background-color: var(--bckgrdColor);
     overflow: hidden;
     border-bottom: 1px solid #e9ebf2;
 }
@@ -45,10 +46,12 @@ nav .logo i {
     font-size: 25px;
     border-radius: 50%;
     text-align: center;
-    background-color: var(--hoverColor);
+    background-color: var(--mainColor);
     color: #fff;
 }
-
+nav .logo i:hover{
+    background-color: var(--hoverColor);
+}
 nav .logo span {
     font-weight: bold;
     padding-left: 0px;
@@ -64,6 +67,7 @@ nav .search {
     border: 1px solid #e9ebf2;
     background-color: #f6f7f9;
     border-radius: 20.5px;
+    overflow: hidden;
 }
 
 nav .search i {
@@ -76,11 +80,17 @@ nav .search i {
     margin-left: 12px;
     margin-right: 12px;
     text-align: center;
+    cursor: pointer;
 }
 
-nav .search span {
+nav .search input {
     color: #e9ebf2;
-
+    width:350px ;
+    height: 100%;
+float: right;
+background-color: transparent;
+border: none;
+color: #121212;
 }
 
 nav .navcont {
@@ -101,7 +111,7 @@ nav .write {
     border-right: 1px solid #d6d9df;
 }
 
-nav .write span {
+nav .write button {
     display: inline-block;
     width: 100px;
     height: 41px;
@@ -110,6 +120,7 @@ nav .write span {
     background-color: var(--hoverColor);
     border-radius: 20.5px;
     color: #fff;
+    cursor: pointer;
 }
 
 nav .mod {
@@ -141,10 +152,11 @@ nav .mod span i {
     text-align: center;
     margin-top: 5px;
     border-radius: 15.5px;
+    cursor: pointer;
 }
 
 nav .mod span i.active {
-    background-color: #fff;
+    background-color: var(--bckgrdColor);
 }
 
 nav .chat {
@@ -169,20 +181,46 @@ nav .chat span i {
     margin-right: 18px;
     border-radius: 15.5px;
     color: #1d3066;
-
 }
-
+nav .chat span i.active{
+    color: var(--hoverColor);
+}
 nav .personal-profile {
     display: inline-block;
     float: left;
     margin-left: 25px;
     width: 62px;
     height: 41px;
-    /* border-right: 1px solid #d6d9df; */
-
+    cursor: pointer;
 }
 
+.personal-profile-menu{
+    position: absolute;
+    top: 90px;
+    right: 32px;
+    width: 150px;
+    background-color: var(--mainColor);
+    z-index: 2;
+    padding: 15px 20px;
+    display: none;
+}
+.personal-profile-menu.active{
+    display: block;
 
+}
+.personal-profile-menu span{
+    display: inline-block;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    font-size: 20px;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+}
+.personal-profile-menu span:hover{
+    background-color: var(--hoverColor);
+}
 nav .personal-profile img {
     width: 41px;
     height: 41px;
@@ -199,6 +237,51 @@ nav .personal-profile i {
     color: #7783a3;
 }
 
+.write-screen{
+    position: absolute;
+    top: 90px;
+    left: 50%;
+    width: 500px;
+    /* height: 300px; */
+    border-radius: 15px;
+    background-color: var(--mainColor);
+    z-index: 2;
+    display: none;
+}
+.write-screen.active{
+    display: block;
+}
+.write-screen i{
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 30px;
+    text-align: center;
+    border-radius: 5px;
+    float: right;
+    margin: 15px;
+    cursor: pointer;
+}
+.write-screen i:hover{
+    background-color: var(--hoverColor);
+}
+.write-screen textarea{
+    margin: 0 50px 15px;
+    padding: 15px;
+    min-width: 400px;
+    max-width: 400px;
+
+    height: 200px;
+    border-radius: 15px;
+    line-height: 30px;
+}
+.write-screen button{
+    float: right;
+    margin: 0 50px 15px;
+    cursor: pointer;
+    width: 70px;
+    height: 25px;
+}
 /* End navbar setting */
 
 /* Start left Aside setting */
@@ -236,14 +319,13 @@ main {
     width: calc(100% - 71px);
     float: right;
     min-height: 1043px;
-
 }
 
 .upper-sec {
     height: 686px;
     width: 100%;
     /* border: 1px solid #919ab4; */
-    background-color: #fff;
+    background-color: var(--bckgrdColor);
 }
 
 .upper-sec .trend-stories {
@@ -370,7 +452,7 @@ main {
     text-align: center;
     border-radius: 50%;
     background-color: #fff;
-    color: #26386c;
+    color: var(--mainColor);
 }
 
 .authors .favorite-author .fa-caret-right {
@@ -384,9 +466,12 @@ main {
     text-align: center;
     border-radius: 50%;
     background-color: #fff;
-    color: #26386c;
+    color: var(--mainColor);
 }
-
+.authors .favorite-author i:hover{
+    color:var(--hoverColor);
+    cursor: pointer;
+}
 .authors .favorite-author div img {
     display: none;
     width: 65px;
@@ -564,7 +649,7 @@ main {
     padding: 32px;
     width: calc(100%);
     /* height: 288px; */
-    background-color: #fff;
+    background-color: var(--bckgrdColor);
 }
 
 .lower-sec>div {

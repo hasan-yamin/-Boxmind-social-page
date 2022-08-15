@@ -23,11 +23,12 @@
             </div>
             <div class="search">
                 <i class="fa-solid fa-magnifying-glass"></i>
-                <span>Search</span>
+                <!-- <span>Search</span> -->
+                <input type="search" id="search" name="search" placeholder="Search">
             </div>
             <div class="navcont">
                 <div class="write">
-                    <span>Write</span>
+                    <button>Write</button>
                 </div>
                 <div class="mod">
                     <span>
@@ -46,8 +47,18 @@
                     <i class="fa-solid fa-angle-down"></i>
                 </div>
             </div>
-
-
+            <div class="personal-profile-menu">
+                <span>My account</span>
+                <span>...</span>
+                <span>...</span>
+                <span>...</span>
+                <span>Sign out</span>
+            </div>
+            <div class="write-screen">
+                <i class="fa-solid fa-xmark"></i>
+                <textarea name="text" id="sharestatus" placeholder="share with us what you think"></textarea>
+                <button class="share">share</button>
+            </div>
         </nav>
         <!-- End Navbar -->
         <!-- Start left-bar -->
@@ -134,24 +145,7 @@
                         <span>Favorite author</span>
                         <i class="fa-solid fa-caret-left"></i>
                         <i class="fa-solid fa-caret-right"></i>
-                        <div>
-
-                            <img class="active" src="images/1.png" alt="">
-                            <img class="active" src="images/2.png" alt="">
-                            <img class="active" src="images/3.jpg" alt="">
-                            <img class="active" src="images/4.jpg" alt="">
-                            <img class="active" src="images/5.jpg" alt="">
-                            <img class="active" src="images/6.jpg" alt="">
-                            <img class="active" src="images/7.png" alt="">
-                            <img class="active" src="images/8.jpg" alt="">
-                            <img class="active" src="images/10.png" alt="">
-                            <img class="active" src="images/4.jpg" alt="">
-                            <img class="" src="images/11.png" alt="">
-                            <img class="" src="images/2.png" alt="">
-                            <img class="" src="images/3.jpg" alt="">
-                            <img class="" src="images/4.jpg" alt="">
-                            <img class="" src="images/5.jpg" alt="">
-                        </div>
+                        <div></div>
                     </div>
 
                     <div class="foolowing">
@@ -270,6 +264,10 @@
             <!-- End lower section -->
         </main>
     </div>
+
+
+
+    <script src="js/custom.js"></script>
 </body>
 
 </html>
