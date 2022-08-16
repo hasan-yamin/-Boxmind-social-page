@@ -40,26 +40,6 @@ document.querySelector(".write-screen i").addEventListener('click',function(){
 
 // End Navbar
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // Start Favorite author
 // add img profile to Favorite author part
 let imgProfile = [
@@ -118,3 +98,35 @@ prevAuthor.addEventListener('click', function () {
 
 });
 // End Favorite author
+
+// followers
+let floowingBtn = document.querySelectorAll(".authors .foolowing .followers span")[0];
+let followerBtn = document.querySelectorAll(".authors .foolowing .followers span")[1];
+
+floowingBtn.addEventListener('click',function(){
+    floowingBtn.classList.add("active");
+    followerBtn.classList.remove("active");
+});
+followerBtn.addEventListener('click',function(){
+    followerBtn.classList.add("active");
+    floowingBtn.classList.remove("active");
+});
+
+//left bar
+
+let trendBtn = document.querySelector(".left-bar .setting .fa-grip");
+let trendStories = document.querySelector(".upper-sec .trend-stories");
+let upperpart = document.querySelector(".upper-sec")
+trendBtn.addEventListener('click',function(){
+    trendBtn.classList.toggle("active");
+    trendStories.classList.toggle("active");
+    console.log(getComputedStyle(upperpart).width);
+    console.log(getComputedStyle(trendStories).width);
+    document.querySelector(".authors").style.width= (parseFloat(getComputedStyle(upperpart).width) -parseFloat(getComputedStyle(trendStories).width) )+"px";
+});
+
+//left bar height
+// let leftHeight = document.querySelector(".left-bar");
+// window.addEventListener('scroll',function(){
+//     leftHeight.style.height = window.innerHeight + window.scrollY - 155 + "px";
+// });
